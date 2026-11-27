@@ -1,0 +1,495 @@
+.auth-page.auth-entry {
+  max-width: 32rem;
+  padding: clamp(1.25rem, 4vw, 2.25rem);
+}
+
+.auth-entry .brand {
+  align-self: center;
+  margin-bottom: 1.35rem;
+}
+
+.auth-entry .auth-form-card {
+  margin: 0;
+  padding: clamp(1.15rem, 4vw, 2rem);
+}
+
+.auth-form-card .notice {
+  margin-bottom: 0;
+}
+
+p.notice {
+  margin-top: .9rem;
+  padding-top: .65rem;
+  border-top: 1px solid var(--edge);
+  background: transparent;
+}
+
+.profile-leaf .leaf-silhouette {
+  width: 1.7rem;
+  height: 2.65rem;
+}
+
+.profile-preview {
+  color: var(--rum-raisin);
+}
+
+.care-check {
+  display: grid;
+  gap: .85rem;
+  align-items: stretch;
+}
+
+.check-in-heading,
+.check-in-actions {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+}
+
+.check-in-heading > .ink-drawing {
+  width: 2.6rem;
+  height: 2.7rem;
+  flex: 0 0 2.6rem;
+}
+
+.care-check .check-in-heading p {
+  font-size: 1rem;
+}
+
+.check-in-actions {
+  flex-wrap: wrap;
+}
+
+.check-in-actions > button {
+  min-height: 44px;
+}
+
+.check-in-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: .65rem;
+  border-top: 1px solid var(--edge);
+  padding-top: .85rem;
+}
+
+.check-in-form label {
+  flex: 1 1 11rem;
+  color: var(--rum-raisin);
+  font-weight: 650;
+}
+
+.check-in-form input {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  margin-top: .3rem;
+  padding: .55rem .7rem;
+  border: 1px solid var(--control-edge);
+  border-radius: 10px;
+  color: var(--rum-raisin);
+  background: var(--surface-solid);
+}
+
+.care-check .check-in-error {
+  color: var(--beet-red);
+}
+
+@property --site-tint {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #a6c9dd;
+}
+
+@property --side-tint {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #e098ac;
+}
+
+.clover-site {
+  --site-tint: var(--crystal-blue);
+  --side-tint: var(--sea-pink);
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  min-height: 100svh;
+  background:
+    radial-gradient(ellipse at 7% 8%, color-mix(in srgb, var(--site-tint) 43%, transparent), transparent 68%),
+    radial-gradient(ellipse at 95% 16%, color-mix(in srgb, var(--side-tint) 35%, transparent), transparent 59%),
+    linear-gradient(145deg, color-mix(in srgb, var(--paper) 48%, transparent), transparent 65%);
+}
+
+.clover-wallpaper {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  background: #ddecaf;
+}
+
+.clover-wallpaper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.clover-wallpaper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, rgba(255, 251, 246, .42), transparent 72%),
+    linear-gradient(145deg, rgba(239, 226, 232, .22), rgba(237, 240, 215, .15)),
+    linear-gradient(rgba(255, 250, 241, .42), rgba(255, 250, 241, .52));
+}
+
+.clover-content {
+  position: relative;
+  z-index: 1;
+}
+
+.clover-site:is([data-theme='diary'], [data-theme='groups'], [data-theme='highlights'], [data-theme='auth'], [data-theme='welcome']) {
+  --site-tint: var(--sea-pink);
+  --side-tint: var(--crystal-blue);
+}
+
+.clover-site:is([data-theme='capture'], [data-theme='settings'], [data-theme='setup']) {
+  --site-tint: var(--paper);
+  --side-tint: var(--sea-pink);
+}
+
+.clover-site:is([data-theme='care'], [data-theme='calendar']) {
+  --side-tint: var(--paper);
+}
+
+.bottom-nav a {
+  min-height: 44px;
+  font-size: .72rem;
+}
+
+.bottom-nav a.nav-highlights {
+  display: none;
+}
+
+.bottom-nav .active,
+.bottom-nav .nav-capture.active {
+  color: var(--beet-red);
+  background: var(--pink-wash);
+}
+
+.card {
+  box-shadow: 0 8px 26px var(--shadow-ink);
+}
+
+.home-spread,
+.spread-two {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.home-spread > *,
+.spread-two > * {
+  min-width: 0;
+}
+
+.home-spread .greeting {
+  margin: 0;
+  background:
+    linear-gradient(120deg, color-mix(in srgb, var(--paper) 40%, transparent), color-mix(in srgb, var(--crystal-blue) 24%, transparent)),
+    var(--surface);
+}
+
+.greeting-art img {
+  width: min(100%, 195px);
+}
+
+.home-actions {
+  display: grid;
+  align-content: center;
+  gap: .8rem;
+}
+
+.home-actions .quick-row,
+.home-actions .highlights-teaser {
+  margin: 0;
+}
+
+.home-actions .quick-action--photo {
+  background: color-mix(in srgb, var(--sea-pink) 28%, var(--surface));
+}
+
+.home-actions .quick-action--voice {
+  background: color-mix(in srgb, var(--crystal-blue) 42%, var(--surface));
+}
+
+.home-actions .quick-action--write {
+  background: color-mix(in srgb, var(--paper) 68%, var(--surface));
+}
+
+.highlights-teaser {
+  background: var(--surface);
+}
+
+.home-moments .section-title,
+.home-schedule .section-title {
+  margin: 0 0 .45rem;
+  gap: .5rem;
+}
+
+.home-spread :is(h2, .section-title) {
+  margin-bottom: .6rem;
+}
+
+.home-spread .section-title h2 {
+  margin: 0;
+}
+
+.home-moments .moment-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+}
+
+.home-moments .moment,
+.home-clovers .group-card {
+  margin-bottom: 0;
+}
+
+.capture-spread audio {
+  width: 100%;
+  margin-top: .7rem;
+}
+
+.capture-editor {
+  display: grid;
+  align-content: start;
+}
+
+.capture-editor textarea {
+  min-height: 9rem;
+}
+
+.ai-spread .quote {
+  margin: 0;
+  background: linear-gradient(135deg, var(--pink-wash), var(--paper-wash));
+}
+
+.highlights-header em {
+  font-family: var(--italic-font);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.highlights-header em {
+  display: block;
+  font-size: 1.12em;
+  line-height: .97;
+}
+
+.weekly-highlights {
+  box-shadow: 0 12px 36px var(--shadow-ink);
+}
+
+.clover-site[data-theme='care'] :is(h1, h2, h3) {
+  font-family: var(--reading-font);
+  font-weight: 700;
+}
+
+.care-games :is(.game-secondary, .game-options button) {
+  min-height: 44px;
+}
+
+.care-games :is(.game-round, .game-leaderboard) {
+  margin-bottom: 0;
+}
+
+.game-play-area {
+  min-width: 0;
+}
+
+.settings-spread label input {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  margin: .35rem 0 .85rem;
+  padding: .55rem .7rem;
+  border: 1px solid var(--control-edge);
+  border-radius: 10px;
+  background: var(--surface-solid);
+}
+
+.settings-spread .toggle {
+  flex: 0 0 45px;
+  outline-offset: 3px;
+}
+
+.auth-form-card label {
+  display: block;
+  margin-top: .75rem;
+}
+
+.clover-arrival {
+  position: fixed;
+  z-index: 30;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, #fffdf7, #efede1);
+}
+
+.arrival-wordmark {
+  --wordmark-width: clamp(11rem, 46vw, 21rem);
+}
+
+@keyframes clover-enter {
+  0%, 72% { opacity: 1; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+@keyframes clover-wordmark-enter {
+  from { opacity: 0; transform: translateY(.3rem) scale(.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes route-enter {
+  from { opacity: .55; transform: translateY(.45rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes section-enter {
+  from { opacity: .83; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .clover-site { transition: --site-tint 320ms ease, --side-tint 320ms ease; }
+  .clover-arrival { animation: clover-enter 1800ms ease-in-out both; }
+  .arrival-wordmark { animation: clover-wordmark-enter 540ms ease-out both; }
+  .route-stage { animation: route-enter 240ms ease-out; }
+
+  @supports (animation-timeline: view()) {
+    .home-spread > :is(.home-clovers, .home-moments, .home-schedule),
+    .highlight-folder {
+      animation: section-enter 1ms linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 24%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .clover-arrival { display: none; }
+}
+
+@media (min-width: 820px) {
+  .app-shell {
+    max-width: 1480px;
+    padding: 0 clamp(1.5rem, 4vw, 4rem) 3rem;
+  }
+
+  .bottom-nav {
+    position: sticky;
+    top: .65rem;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    gap: .25rem;
+    margin: 0 0 1.3rem;
+    padding: .38rem .5rem;
+    border: 1px solid var(--edge);
+    border-radius: 16px;
+    box-shadow: 0 6px 24px var(--shadow-ink);
+  }
+
+  .bottom-nav a {
+    flex: 0 1 auto;
+    flex-direction: row;
+    gap: .38rem;
+    padding: .55rem clamp(.42rem, 1.15vw, 1rem);
+    font-size: .87rem;
+    white-space: nowrap;
+  }
+
+  .bottom-nav .nav-capture {
+    margin-left: auto;
+    color: var(--beet-red);
+    background: var(--paper-wash);
+  }
+
+  .spread-two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 1.25rem;
+  }
+
+  .spread-two > .card {
+    margin-bottom: 0;
+  }
+
+  .shared-groups {
+    margin-bottom: 1rem;
+  }
+
+  .timeline {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .timeline > .card {
+    min-width: 0;
+    margin-bottom: 0;
+  }
+
+  .timeline > .empty {
+    grid-column: 1 / -1;
+  }
+
+}
+
+@media (min-width: 980px) {
+  .home-spread {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    grid-template-areas:
+      'greeting actions'
+      'clovers schedule'
+      'moments moments';
+    gap: 1.4rem;
+    align-items: start;
+  }
+
+  .home-spread .greeting { grid-area: greeting; }
+  .home-actions { grid-area: actions; align-self: center; }
+  .home-clovers { grid-area: clovers; }
+  .home-moments { grid-area: moments; }
+  .home-schedule { grid-area: schedule; }
+
+  .home-clovers .group-scroll {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+    gap: .8rem;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+  }
+
+  .home-clovers .group-card { min-width: 0; }
+  .home-schedule .appointment { min-height: 5.1rem; }
+
+  .games-spread {
+    grid-template-columns: minmax(0, 1.65fr) minmax(16rem, .85fr);
+  }
+}
+
+@media (min-width: 1050px) {
+  .bottom-nav a.nav-highlights { display: flex; }
+  .highlight-folders { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
