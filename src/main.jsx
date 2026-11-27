@@ -1,1 +1,12 @@
-import React from 'react'; import {createRoot} from 'react-dom/client'; import {BrowserRouter} from 'react-router-dom'; import App from './App'; import './styles/index.css'; createRoot(document.getElementById('root')).render(<BrowserRouter><App/></BrowserRouter>);
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+import './styles/index.css';
+import './styles/journal-extras.css';
+import './styles/landscape.css';
+import './styles/experience.css';
+
+createRoot(document.getElementById('root')).render(
+  <BrowserRouter><App /></BrowserRouter>
+);
